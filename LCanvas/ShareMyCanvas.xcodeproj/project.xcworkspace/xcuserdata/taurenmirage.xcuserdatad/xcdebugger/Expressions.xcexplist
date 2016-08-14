@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[UserTableViewController readNSUserDefaults]:UserTableViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[userDefaultes stringForKey:@&quot;DisplayName&quot;]">
+            </PersistentString>
+            <PersistentString
+               value = "[userDefaultes stringForKey:@&quot;userID&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SignInViewController checkPassword]:SignInViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.password.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SignInViewController checkUserName]:SignInViewController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

@@ -1,0 +1,144 @@
+
+/* Class = "UITableViewSection"; headerTitle = " Title"; ObjectID = "08y-i7-Aa4"; */
+"08y-i7-Aa4.headerTitle" = " 标题";
+
+/* Class = "UIButton"; normalTitle = "问题"; ObjectID = "2Pa-jw-xFm"; */
+"2Pa-jw-xFm.normalTitle" = "问题";
+
+/* Class = "UIBarButtonItem"; title = "取消"; ObjectID = "2fs-VY-KJD"; */
+"2fs-VY-KJD.title" = "取消";
+
+/* Class = "UIButton"; normalTitle = "收入分析"; ObjectID = "4EB-Li-0DP"; */
+"4EB-Li-0DP.normalTitle" = "收入分析";
+
+/* Class = "UITextField"; placeholder = "画布说明"; ObjectID = "AJp-Lq-3p9"; */
+"AJp-Lq-3p9.placeholder" = "画布说明";
+
+/* Class = "UIBarButtonItem"; title = "取消"; ObjectID = "ECE-xv-MMQ"; */
+"ECE-xv-MMQ.title" = "取消";
+
+/* Class = "UITextField"; placeholder = "Content"; ObjectID = "ER0-oh-BKi"; */
+"ER0-oh-BKi.placeholder" = "内容";
+
+/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "Gth-L9-bz3"; */
+"Gth-L9-bz3.normalTitle" = "登录";
+
+/* Class = "UIButton"; normalTitle = "客户群体分类"; ObjectID = "Kri-Pm-IKD"; */
+"Kri-Pm-IKD.normalTitle" = "客户群体分类";
+
+/* Class = "UIBarButtonItem"; title = "取消"; ObjectID = "LHi-SA-N5N"; */
+"LHi-SA-N5N.title" = "取消";
+
+/* Class = "UIBarButtonItem"; title = "保存"; ObjectID = "NIL-un-9xS"; */
+"NIL-un-9xS.title" = "保存";
+
+/* Class = "UITextField"; placeholder = "用户名"; ObjectID = "OSw-Zs-tz3"; */
+"OSw-Zs-tz3.placeholder" = "用户名";
+
+/* Class = "UINavigationItem"; title = "用户"; ObjectID = "SMh-I7-dD2"; */
+"SMh-I7-dD2.title" = "用户";
+
+/* Class = "UILabel"; text = "This is the detail content."; ObjectID = "Tyz-hv-Z7q"; */
+"Tyz-hv-Z7q.text" = "This is the detail content.";
+
+/* Class = "UIBarButtonItem"; title = "保存"; ObjectID = "Weh-h4-rcY"; */
+"Weh-h4-rcY.title" = "保存";
+
+/* Class = "UITableViewSection"; headerTitle = " Description"; ObjectID = "XWk-6L-but"; */
+"XWk-6L-but.headerTitle" = " 说明";
+
+/* Class = "UIButton"; normalTitle = "  Report"; ObjectID = "YrY-It-TVv"; */
+"YrY-It-TVv.normalTitle" = "  内容举报";
+
+/* Class = "UITextField"; placeholder = "画布标题"; ObjectID = "a2b-9T-5Wf"; */
+"a2b-9T-5Wf.placeholder" = "画布标题";
+
+/* Class = "UILabel"; text = "系统生成"; ObjectID = "bAy-hp-7l6"; */
+"bAy-hp-7l6.text" = "系统生成";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bJJ-io-Vkz"; */
+"bJJ-io-Vkz.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "解决方案"; ObjectID = "c9V-Uc-kAp"; */
+"c9V-Uc-kAp.normalTitle" = "解决方案";
+
+/* Class = "UITableViewSection"; footerTitle = "TEST"; ObjectID = "cBo-h4-HlD"; */
+"cBo-h4-HlD.footerTitle" = "TEST";
+
+/* Class = "UITableViewSection"; headerTitle = "Content Type"; ObjectID = "cBo-h4-HlD"; */
+"cBo-h4-HlD.headerTitle" = "Content Type";
+
+/* Class = "UIButton"; normalTitle = "门槛优势"; ObjectID = "exT-Ez-2H5"; */
+"exT-Ez-2H5.normalTitle" = "门槛优势";
+
+/* Class = "UIButton"; normalTitle = "关键指标"; ObjectID = "fNi-oU-7xb"; */
+"fNi-oU-7xb.normalTitle" = "关键指标";
+
+/* Class = "UINavigationItem"; title = "追加内容"; ObjectID = "h05-eJ-0bJ"; */
+"h05-eJ-0bJ.title" = "追加内容";
+
+/* Class = "UIButton"; normalTitle = "渠道"; ObjectID = "iHt-zy-Vl5"; */
+"iHt-zy-Vl5.normalTitle" = "渠道";
+
+/* Class = "UIButton"; normalTitle = "Create an account"; ObjectID = "kSb-xY-4Re"; */
+"kSb-xY-4Re.normalTitle" = "创建用户";
+
+/* Class = "UINavigationItem"; title = "编辑画布"; ObjectID = "kko-PF-vsP"; */
+"kko-PF-vsP.title" = "编辑画布";
+
+/* Class = "UIButton"; normalTitle = "我的画布"; ObjectID = "ln2-WW-awI"; */
+"ln2-WW-awI.normalTitle" = "我的画布";
+
+/* Class = "UIButton"; normalTitle = "X"; ObjectID = "m1j-3g-OIP"; */
+"m1j-3g-OIP.normalTitle" = "X";
+
+/* Class = "UITableViewSection"; headerTitle = " UniqueID"; ObjectID = "nhs-Lg-swh"; */
+"nhs-Lg-swh.headerTitle" = " 唯一标识";
+
+/* Class = "UISegmentedControl"; nym-ga-bX7.segmentTitles[0] = "采纳内容"; ObjectID = "nym-ga-bX7"; */
+"nym-ga-bX7.segmentTitles[0]" = "采纳内容";
+
+/* Class = "UISegmentedControl"; nym-ga-bX7.segmentTitles[1] = "所有内容"; ObjectID = "nym-ga-bX7"; */
+"nym-ga-bX7.segmentTitles[1]" = "所有内容";
+
+/* Class = "UILabel"; text = "可编辑"; ObjectID = "oq8-vr-BAV"; */
+"oq8-vr-BAV.text" = "可编辑";
+
+/* Class = "UIButton"; normalTitle = "成本分析"; ObjectID = "puE-7K-Ya5"; */
+"puE-7K-Ya5.normalTitle" = "成本分析";
+
+/* Class = "UILabel"; text = "公开"; ObjectID = "rBc-qS-3jO"; */
+"rBc-qS-3jO.text" = "公开";
+
+/* Class = "UITableViewSection"; headerTitle = " Authority Control"; ObjectID = "rYr-S2-2mv"; */
+"rYr-S2-2mv.headerTitle" = " 权限控制";
+
+/* Class = "UITableViewSection"; headerTitle = "Display name"; ObjectID = "rar-Rd-2y2"; */
+"rar-Rd-2y2.headerTitle" = "编辑显示名";
+
+/* Class = "UITextField"; placeholder = "密码"; ObjectID = "se6-Ym-GaX"; */
+"se6-Ym-GaX.placeholder" = "密码";
+
+/* Class = "UIBarButtonItem"; title = "保存"; ObjectID = "shh-dJ-WPC"; */
+"shh-dJ-WPC.title" = "保存";
+
+/* Class = "UIButton"; normalTitle = "独特卖点"; ObjectID = "sja-Is-JJI"; */
+"sja-Is-JJI.normalTitle" = "独特卖点";
+
+/* Class = "UIButton"; normalTitle = "退出登录"; ObjectID = "v4c-9M-jfK"; */
+"v4c-9M-jfK.normalTitle" = "退出登录";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "x60-J9-Sjl"; */
+"x60-J9-Sjl.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "Add new canvas first."; ObjectID = "UDN-lo-u4q"; */
+"UDN-lo-u4q.text" = "请先添加画布。";
+
+/* Class = "UILabel"; text = "Share My Canvas"; ObjectID = "9xf-MO-na0"; */
+"9xf-MO-na0.text" = "创业画布分享";
+
+/* Class = "UIButton"; normalTitle = "Model Select"; ObjectID = "eCn-hD-09b"; */
+"eCn-hD-09b.normalTitle" = "画布类型";
+
+/* Class = "UITableViewSection"; headerTitle = " Type"; ObjectID = "9VY-A3-X4b"; */
+"9VY-A3-X4b.headerTitle" = " 画布类型";

@@ -1,0 +1,132 @@
+/* 
+  Localizable.strings
+  LCanvas
+
+  Created by Yiwen Fu on 15/12/18.
+  Copyright © 2015年 Yiwen Fu. All rights reserved.
+*/
+
+"problemDesc"="Top 3 problems";
+
+"solutionDesc"="Top 3 features";
+
+"keyDesc"="Key activities you measure";
+
+"uniqueDesc"="single,clear,compelling message that states why you are different and worth paying attention";
+
+"costDesc"="Customer Acquisition Costs";
+
+"unfairDesc"="Can’t be easily copied or bought";
+
+"channelDesc"="Path to customers";
+
+"customerDesc"="Target customers";
+
+"revenueDesc"="Revenue Model,Life Time Value,Gross Margin";
+
+"problem"="Problems";
+
+"solution"="Solutions";
+
+"key"="Key Metrics";
+
+"unique"="Unique Value Proposition";
+
+"cost"="Cost Structure";
+
+"unfair"="Unfair Advantage";
+
+"channel"="Channels";
+
+"customer"="Customer Segments";
+
+"revenue"="Revenue Stream";
+
+"connecterror"="connect error!";
+
+"error"="Error";
+
+"ok"="OK";
+
+"canncel"="Cancel";
+
+"signin"="Sign In";
+
+"createaccount"="Create an Account";
+
+"report"="Report";
+
+"newCanvas"="New Canvas";
+
+"accept"="Accept";
+
+"deny"="Deny";
+
+"new"="New";
+
+"edit"="Edit";
+
+"search"="Search";
+
+"failed"="Failed";
+
+"uniqueid"="UniqueID";
+
+"msg001"="Username already exist.";
+
+"msg002"="Incorrect username or password.";
+
+"msg003"="Select canvas to view or edit.";
+
+"msg004"="New,edit or search canvas";
+
+"msg005"="Input uniqueID to view open canvas.";
+
+"msg006"="Canvas not found or not open for view.";
+
+"msg007"="Report inporperate content?";
+
+"msg008"="Username can only contain letters,numbers and no more than 15 characters.";
+
+"msg009"="Select canvas type.";
+
+"keyPartnersB"="Key Partners";
+
+"keyActivitiesB"="Key Activities";
+
+"valuePropositionB"="Value Proposition";
+
+"customerRelationshipsB"="Customer Relationship";
+
+"customerSegmentsB"="Customer Segments";
+
+"keyResourceB"="Key Resource";
+
+"channelsB"="Channels";
+
+"costStructureB"="Cost Structure";
+
+"revenueStreamsB"="Revenue Streams";
+
+"keyPartnersBDesc"="Who will help you?";
+
+"keyActivitiesBDesc"="How do you do it?";
+
+"valuePropositionBDesc"="What do you do?";
+
+"customerRelationshipsBDesc"="How do you interact?";
+
+"customerSegmentsBDesc"="Who do you help?";
+
+"keyResourceBDesc"="What do you need?";
+
+"channelsBDesc"="How do you reach them?";
+
+"costStructureBDesc"="What will it cost?";
+
+"revenueStreamsBDesc"="How much will you make?";
+
+"leanModel"="Lean Model";
+
+"businessModel"="Business Model";
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
+    <entity name="Canvas" representedClassName="Canvas" syncable="YES">
+        <attribute name="active_flag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="canvas_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="canvas_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="canvas_title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="create_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="create_user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="display_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="editable_flag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="model_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="open_flag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="owner_user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unique_id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Content" representedClassName="Content" syncable="YES">
+        <attribute name="active_flag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="canvas_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="content_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="create_date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="create_user" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="display_name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="active_flag" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="display_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="user_name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Canvas" positionX="-54" positionY="0" width="128" height="225"/>
+        <element name="Content" positionX="-36" positionY="90" width="128" height="165"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="120"/>
+    </elements>
+</model>

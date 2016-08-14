@@ -1,0 +1,144 @@
+
+/* Class = "UITableViewSection"; headerTitle = " Title"; ObjectID = "08y-i7-Aa4"; */
+"08y-i7-Aa4.headerTitle" = " Title";
+
+/* Class = "UIButton"; normalTitle = "Problem"; ObjectID = "2Pa-jw-xFm"; */
+"2Pa-jw-xFm.normalTitle" = "Problem";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "2fs-VY-KJD"; */
+"2fs-VY-KJD.title" = "Cancel";
+
+/* Class = "UIButton"; normalTitle = "Revenue Stream"; ObjectID = "4EB-Li-0DP"; */
+"4EB-Li-0DP.normalTitle" = "Revenue Stream";
+
+/* Class = "UITableViewSection"; headerTitle = " Type"; ObjectID = "9VY-A3-X4b"; */
+"9VY-A3-X4b.headerTitle" = " Type";
+
+/* Class = "UILabel"; text = "Share My Canvas"; ObjectID = "9xf-MO-na0"; */
+"9xf-MO-na0.text" = "Share My Canvas";
+
+/* Class = "UITextField"; placeholder = "Canvas Description"; ObjectID = "AJp-Lq-3p9"; */
+"AJp-Lq-3p9.placeholder" = "Canvas Description";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "ECE-xv-MMQ"; */
+"ECE-xv-MMQ.title" = "Cancel";
+
+/* Class = "UITextField"; placeholder = "Content"; ObjectID = "ER0-oh-BKi"; */
+"ER0-oh-BKi.placeholder" = "Content";
+
+/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "Gth-L9-bz3"; */
+"Gth-L9-bz3.normalTitle" = "Sign in";
+
+/* Class = "UIButton"; normalTitle = "Customer Segments"; ObjectID = "Kri-Pm-IKD"; */
+"Kri-Pm-IKD.normalTitle" = "Customer Segments";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "LHi-SA-N5N"; */
+"LHi-SA-N5N.title" = "Cancel";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "NIL-un-9xS"; */
+"NIL-un-9xS.title" = "Save";
+
+/* Class = "UITextField"; placeholder = "UserName"; ObjectID = "OSw-Zs-tz3"; */
+"OSw-Zs-tz3.placeholder" = "UserName";
+
+/* Class = "UINavigationItem"; title = "User"; ObjectID = "SMh-I7-dD2"; */
+"SMh-I7-dD2.title" = "User";
+
+/* Class = "UILabel"; text = "This is the detail content."; ObjectID = "Tyz-hv-Z7q"; */
+"Tyz-hv-Z7q.text" = "This is the detail content.";
+
+/* Class = "UILabel"; text = "Add new canvas first."; ObjectID = "UDN-lo-u4q"; */
+"UDN-lo-u4q.text" = "Add new canvas first.";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "Weh-h4-rcY"; */
+"Weh-h4-rcY.title" = "Save";
+
+/* Class = "UITableViewSection"; headerTitle = " Description"; ObjectID = "XWk-6L-but"; */
+"XWk-6L-but.headerTitle" = " Description";
+
+/* Class = "UIButton"; normalTitle = "  Report"; ObjectID = "YrY-It-TVv"; */
+"YrY-It-TVv.normalTitle" = "  Report";
+
+/* Class = "UITextField"; placeholder = "Canvas Title"; ObjectID = "a2b-9T-5Wf"; */
+"a2b-9T-5Wf.placeholder" = "Canvas Title";
+
+/* Class = "UILabel"; text = "Generate by System"; ObjectID = "bAy-hp-7l6"; */
+"bAy-hp-7l6.text" = "Generate by System";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bJJ-io-Vkz"; */
+"bJJ-io-Vkz.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Solution"; ObjectID = "c9V-Uc-kAp"; */
+"c9V-Uc-kAp.normalTitle" = "Solution";
+
+/* Class = "UITableViewSection"; footerTitle = "TEST"; ObjectID = "cBo-h4-HlD"; */
+"cBo-h4-HlD.footerTitle" = "TEST";
+
+/* Class = "UITableViewSection"; headerTitle = "Content Type"; ObjectID = "cBo-h4-HlD"; */
+"cBo-h4-HlD.headerTitle" = "Content Type";
+
+/* Class = "UIButton"; normalTitle = "Model Select"; ObjectID = "eCn-hD-09b"; */
+"eCn-hD-09b.normalTitle" = "Model Select";
+
+/* Class = "UIButton"; normalTitle = "Unfair Advantage"; ObjectID = "exT-Ez-2H5"; */
+"exT-Ez-2H5.normalTitle" = "Unfair Advantage";
+
+/* Class = "UIButton"; normalTitle = "Key Metrics"; ObjectID = "fNi-oU-7xb"; */
+"fNi-oU-7xb.normalTitle" = "Key Metrics";
+
+/* Class = "UINavigationItem"; title = "Add Content"; ObjectID = "h05-eJ-0bJ"; */
+"h05-eJ-0bJ.title" = "Add Content";
+
+/* Class = "UIButton"; normalTitle = "Channels"; ObjectID = "iHt-zy-Vl5"; */
+"iHt-zy-Vl5.normalTitle" = "Channels";
+
+/* Class = "UIButton"; normalTitle = "Create an account"; ObjectID = "kSb-xY-4Re"; */
+"kSb-xY-4Re.normalTitle" = "Create an account";
+
+/* Class = "UINavigationItem"; title = "Edit Canvas"; ObjectID = "kko-PF-vsP"; */
+"kko-PF-vsP.title" = "Edit Canvas";
+
+/* Class = "UIButton"; normalTitle = "My Canvas"; ObjectID = "ln2-WW-awI"; */
+"ln2-WW-awI.normalTitle" = "My Canvas";
+
+/* Class = "UIButton"; normalTitle = "X"; ObjectID = "m1j-3g-OIP"; */
+"m1j-3g-OIP.normalTitle" = "X";
+
+/* Class = "UITableViewSection"; headerTitle = " UniqueID"; ObjectID = "nhs-Lg-swh"; */
+"nhs-Lg-swh.headerTitle" = " UniqueID";
+
+/* Class = "UISegmentedControl"; nym-ga-bX7.segmentTitles[0] = "Accepted"; ObjectID = "nym-ga-bX7"; */
+"nym-ga-bX7.segmentTitles[0]" = "Accepted";
+
+/* Class = "UISegmentedControl"; nym-ga-bX7.segmentTitles[1] = "All"; ObjectID = "nym-ga-bX7"; */
+"nym-ga-bX7.segmentTitles[1]" = "All";
+
+/* Class = "UILabel"; text = "Editable"; ObjectID = "oq8-vr-BAV"; */
+"oq8-vr-BAV.text" = "Editable";
+
+/* Class = "UIButton"; normalTitle = "Cost Structure"; ObjectID = "puE-7K-Ya5"; */
+"puE-7K-Ya5.normalTitle" = "Cost Structure";
+
+/* Class = "UILabel"; text = "Open"; ObjectID = "rBc-qS-3jO"; */
+"rBc-qS-3jO.text" = "Open";
+
+/* Class = "UITableViewSection"; headerTitle = " Authority Control"; ObjectID = "rYr-S2-2mv"; */
+"rYr-S2-2mv.headerTitle" = " Authority Control";
+
+/* Class = "UITableViewSection"; headerTitle = "Display name"; ObjectID = "rar-Rd-2y2"; */
+"rar-Rd-2y2.headerTitle" = "Display name";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "se6-Ym-GaX"; */
+"se6-Ym-GaX.placeholder" = "Password";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "shh-dJ-WPC"; */
+"shh-dJ-WPC.title" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Unique Value"; ObjectID = "sja-Is-JJI"; */
+"sja-Is-JJI.normalTitle" = "Unique Value";
+
+/* Class = "UIButton"; normalTitle = "Sign out"; ObjectID = "v4c-9M-jfK"; */
+"v4c-9M-jfK.normalTitle" = "Sign out";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "x60-J9-Sjl"; */
+"x60-J9-Sjl.headerTitle" = " ";
