@@ -47,6 +47,7 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *report;
 
+
 @property (strong, nonatomic) IBOutlet UIButton *problem;
 @property (strong, nonatomic) IBOutlet UIButton *solution;
 @property (strong, nonatomic) IBOutlet UIButton *keyMetrics;
@@ -57,6 +58,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *costStructure;
 @property (strong, nonatomic) IBOutlet UIButton *revenueStream;
 
+@property (strong, nonatomic) IBOutlet UIButton *generatePDF;
 
 @property (strong, nonatomic) IBOutlet UIButton *canvasTitle;
 

@@ -122,6 +122,11 @@
         
         [self.modeSelect setTitle:NSLocalizedString ( @"leanModel" , nil ) forState:UIControlStateNormal];
     }
+    else if ([record.model_type isEqualToString:@"2"])
+    {
+        
+        [self.modeSelect setTitle:NSLocalizedString ( @"PersonalModel" , nil ) forState:UIControlStateNormal];
+    }
     else
     {
         [self.modeSelect setTitle:NSLocalizedString ( @"businessModel" , nil ) forState:UIControlStateNormal];
@@ -510,10 +515,20 @@
         [self.modeSelect setTitle:NSLocalizedString ( @"businessModel" , nil ) forState:UIControlStateNormal];
         
     }];
+        
+        
+    UIAlertAction *PersonbusinessAction = [UIAlertAction actionWithTitle:NSLocalizedString ( @"PersonalModel" , nil ) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+            self.modelType = @"2";
+            [self.modeSelect setTitle:NSLocalizedString ( @"PersonalModel" , nil ) forState:UIControlStateNormal];
+            
+        }];
+        
     
     [alertController addAction:cancelAction];
     [alertController addAction:leanAction];
     [alertController addAction:businessAction];
+    [alertController addAction:PersonbusinessAction];
     
     
     [self presentViewController:alertController animated:YES completion:nil];

@@ -204,6 +204,9 @@
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"keyPartnersB" , nil );
         }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"keyPartnersP" , nil );
+        }
         else{
             tempDesc = NSLocalizedString ( @"problem" , nil );
         }
@@ -214,6 +217,9 @@
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"keyActivitiesB" , nil );
         }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"keyActivitiesP" , nil );
+        }
         else{
             tempDesc = NSLocalizedString ( @"solution" , nil );
         }
@@ -222,6 +228,9 @@
     {
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"keyResourceB" , nil );
+        }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"keyResourceP" , nil );
         }
         else{
             tempDesc = NSLocalizedString ( @"key" , nil );
@@ -232,6 +241,9 @@
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"costStructureB" , nil );
         }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"costStructureP" , nil );
+        }
         else{
             tempDesc = NSLocalizedString ( @"cost" , nil );
         }
@@ -240,6 +252,9 @@
     {
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"valuePropositionB" , nil );
+        }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"valuePropositionP" , nil );
         }
         else{
             tempDesc = NSLocalizedString ( @"unique" , nil );
@@ -250,6 +265,9 @@
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"customerRelationshipsB" , nil );
         }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"customerRelationshipsP" , nil );
+        }
         else{
             tempDesc = NSLocalizedString ( @"unfair" , nil );
         }
@@ -258,6 +276,9 @@
     {
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"customerSegmentsB" , nil );
+        }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"customerSegmentsP" , nil );
         }
         else{
             tempDesc = NSLocalizedString ( @"customer" , nil );
@@ -268,6 +289,9 @@
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"channelsB" , nil );
         }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"channelsP" , nil );
+        }
         else{
             tempDesc = NSLocalizedString ( @"channel" , nil );
         }
@@ -276,6 +300,9 @@
     {
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"revenueStreamsB" , nil );
+        }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"revenueStreamsP" , nil );
         }
         else{
             tempDesc = NSLocalizedString ( @"revenue" , nil );
@@ -330,6 +357,9 @@
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"keyPartnersBDesc" , nil );
         }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"keyPartnersPDesc" , nil );
+        }
         else{
             tempDesc = NSLocalizedString ( @"problemDesc" , nil );
         }
@@ -338,6 +368,9 @@
     {
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"keyActivitiesBDesc" , nil );
+        }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"keyActivitiesPDesc" , nil );
         }
         else{
             tempDesc = NSLocalizedString ( @"solutionDesc" , nil );
@@ -348,6 +381,9 @@
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"keyResourceBDesc" , nil );
         }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"keyResourcePDesc" , nil );
+        }
         else{
             tempDesc = NSLocalizedString ( @"keyDesc" , nil );
         }
@@ -356,6 +392,9 @@
     {
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"costStructureBDesc" , nil );
+        }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"costStructurePDesc" , nil );
         }
         else{
             tempDesc = NSLocalizedString ( @"costDesc" , nil );
@@ -366,6 +405,9 @@
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"valuePropositionBDesc" , nil );
         }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"valuePropositionPDesc" , nil );
+        }
         else{
             tempDesc = NSLocalizedString ( @"uniqueDesc" , nil );
         }
@@ -374,6 +416,9 @@
     {
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"customerRelationshipsBDesc" , nil );
+        }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"customerRelationshipsPDesc" , nil );
         }
         else{
             tempDesc = NSLocalizedString ( @"unfairDesc" , nil );
@@ -384,6 +429,9 @@
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"customerSegmentsBDesc" , nil );
         }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"customerSegmentsPDesc" , nil );
+        }
         else{
             tempDesc = NSLocalizedString ( @"customerDesc" , nil );
         }
@@ -393,6 +441,9 @@
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"channelsBDesc" , nil );
         }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"channelsPDesc" , nil );
+        }
         else{
             tempDesc = NSLocalizedString ( @"channelDesc" , nil );
         }
@@ -401,6 +452,9 @@
     {
         if ([self.canvas_type isEqualToString:@"1"]) {
             tempDesc = NSLocalizedString ( @"revenueStreamsBDesc" , nil );
+        }
+        else if ([self.canvas_type isEqualToString:@"2"]) {
+            tempDesc = NSLocalizedString ( @"revenueStreamsPDesc" , nil );
         }
         else{
             tempDesc = NSLocalizedString ( @"revenueDesc" , nil );

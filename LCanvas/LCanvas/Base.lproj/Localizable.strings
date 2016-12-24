@@ -1,134 +1,174 @@
-/* 
-  Localizable.strings
-  LCanvas
+/*
+ Localizable.strings
+ LCanvas
+ 
+ Created by Yiwen Fu on 15/12/18.
+ Copyright © 2015年 Yiwen Fu. All rights reserved.
+ */
 
-  Created by Yiwen Fu on 15/12/18.
-  Copyright © 2015年 Yiwen Fu. All rights reserved.
-*/
+"problemDesc"="最需要解决的三个问题";
 
-"problemDesc"="Top 3 problems";
+"solutionDesc"="产品最重要的三个功能";
 
-"solutionDesc"="Top 3 features";
+"keyDesc"="应该考核哪些东西";
 
-"keyDesc"="Key activities you measure";
+"uniqueDesc"="用一句话简明扼要但引人注目的话阐述为什么你的产品与众不同，值得购买";
 
-"uniqueDesc"="single,clear,compelling message that states why you are different and worth paying attention";
+"costDesc"="争取客户所需花费，销售产品所需花费，网站架设费用，人力资源费用等";
 
-"costDesc"="Customer Acquisition Costs";
+"unfairDesc"="无法被对手轻易复制或者买去的竞争优势";
 
-"unfairDesc"="Can’t be easily copied or bought";
+"channelDesc"="如何找到客户";
 
-"channelDesc"="Path to customers";
+"customerDesc"="目标客户";
 
-"customerDesc"="Target customers";
+"revenueDesc"="盈利模式，客户终身价值，收入，毛利";
 
-"revenueDesc"="Revenue Model,Life Time Value,Gross Margin";
+"problem"="问题";
 
-"problem"="Problems";
+"solution"="解决方案";
 
-"solution"="Solutions";
+"key"="关键指标";
 
-"key"="Key Metrics";
+"unique"="独特卖点";
 
-"unique"="Unique Value Proposition";
+"cost"="成本分析";
 
-"cost"="Cost Structure";
+"unfair"="门槛优势";
 
-"unfair"="Unfair Advantage";
+"channel"="渠道";
 
-"channel"="Channels";
+"customer"="客户群体分类";
 
-"customer"="Customer Segments";
+"revenue"="收入分析";
 
-"revenue"="Revenue Stream";
+"connecterror"="连接错误!";
 
-"connecterror"="Connect error!";
+"error"="错误";
 
-"error"="Error";
+"ok"="好的";
 
-"ok"="OK";
+"canncel"="取消";
 
-"canncel"="Cancel";
+"signin"="登录";
 
-"signin"="Sign In";
+"createaccount"="创建用户";
 
-"createaccount"="Create an Account";
+"report"="举报";
 
-"report"="Report";
+"newCanvas"="新建画布";
 
-"newCanvas"="New Canvas";
+"accept"="采纳";
 
-"accept"="Accept";
+"deny"="否决";
 
-"deny"="Deny";
+"new"="新建";
 
-"new"="New";
+"edit"="编辑";
 
-"edit"="Edit";
+"search"="查找";
 
-"search"="Search";
+"failed"="失败";
 
-"failed"="Failed";
+"uniqueid"="唯一标识";
 
-"uniqueid"="UniqueID";
+"msg001"="用户名已经存在，请用别的用户名注册。";
 
-"msg001"="Username already exist.";
+"msg002"="用户名或密码不正确。";
 
-"msg002"="Incorrect username or password.";
+"msg003"="可以选择你想要查看或者编辑的画布。";
 
-"msg003"="Select canvas to view or edit.";
+"msg004"="查找，新建或者编辑项目";
 
-"msg004"="New,edit or search canvas";
+"msg005"="输入UniqueID查找公开的画布。";
 
-"msg005"="Input uniqueID to view open canvas.";
+"msg006"="未找到画布或者该画布未公开。";
 
-"msg006"="Canvas not found or not open for view.";
+"msg007"="包含不当内容进行举报？";
 
-"msg007"="Report inporperate content?";
+"msg008"="用户名可以包含字母、数字并且不超过15位。";
 
-"msg008"="Username can only contain letters,numbers and no more than 15 characters.";
+"msg009"="选择画布类型。";
 
-"msg009"="Select canvas type.";
+"keyPartnersB"="重要合伙人";
 
-"keyPartnersB"="Key Partners";
+"keyActivitiesB"="价值活动";
 
-"keyActivitiesB"="Key Activities";
+"valuePropositionB"="价值定位";
 
-"valuePropositionB"="Value Proposition";
+"customerRelationshipsB"="客户关系";
 
-"customerRelationshipsB"="Customer Relationship";
+"customerSegmentsB"="客户细分";
 
-"customerSegmentsB"="Customer Segments";
+"keyResourceB"="核心资源";
 
-"keyResourceB"="Key Resource";
+"channelsB"="用户渠道";
 
-"channelsB"="Channels";
+"costStructureB"="成本架构";
 
-"costStructureB"="Cost Structure";
+"revenueStreamsB"="收益流";
 
-"revenueStreamsB"="Revenue Streams";
+"keyPartnersBDesc"="合作伙伴网络";
 
-"keyPartnersBDesc"="Who will help you?";
+"keyActivitiesBDesc"="运转所必需做的重要事情";
 
-"keyActivitiesBDesc"="How do you do it?";
+"valuePropositionBDesc"="你所提供的产品或服务";
 
-"valuePropositionBDesc"="What do you do?";
+"customerRelationshipsBDesc"="你想同目标用户建立怎样的关系";
 
-"customerRelationshipsBDesc"="How do you interact?";
+"customerSegmentsBDesc"="找出你的目标用户";
 
-"customerSegmentsBDesc"="Who do you help?";
+"keyResourceBDesc"="有效运转所需的重要因素";
 
-"keyResourceBDesc"="What do you need?";
+"channelsBDesc"="分销路径及客户接口界面";
 
-"channelsBDesc"="How do you reach them?";
+"costStructureBDesc"="引发的所有成本";
 
-"costStructureBDesc"="What will it cost?";
+"revenueStreamsBDesc"="从各个客户群体中获得的收入";
 
-"revenueStreamsBDesc"="How much will you make?";
 
-"leanModel"="Lean Model";
 
-"businessModel"="Business Model";
+"keyPartnersP"="谁能帮你";
 
+"keyActivitiesP"="你的做为";
+
+"valuePropositionP"="如何助人";
+
+"customerRelationshipsP"="如何交往";
+
+"customerSegmentsP"="你帮助谁";
+
+"keyResourceP"="你有什么";
+
+"channelsP"="如何宣传";
+
+"costStructureP"="你的付出";
+
+"revenueStreamsP"="你的收获";
+
+"keyPartnersPDesc"="谁能支持你产生价值或达到目标";
+
+"keyActivitiesPDesc"="为他人实施的基本的体力或脑力活动";
+
+"valuePropositionPDesc"="你能帮助他人完成什么，给他人带来什么利益";
+
+"customerRelationshipsPDesc"="你想同目标用户建立怎样的关系";
+
+"customerSegmentsPDesc"="即需要依赖你完成工作的人";
+
+"keyResourcePDesc"="你的知识、经验、技能或资产";
+
+"channelsPDesc"="怎样宣传自己、交付服务";
+
+"costStructurePDesc"="时间、精力、金钱，甚至压力";
+
+"revenueStreamsPDesc"="包括物质回报和非物质回报";
+
+
+"leanModel"="精益模型";
+
+"businessModel"="商业模型";
+
+"PersonalModel"="个人模型";
 
 

@@ -126,7 +126,49 @@
 
 "revenueStreamsBDesc"="从各个客户群体中获得的收入";
 
+
+
+"keyPartnersP"="谁能帮你";
+
+"keyActivitiesP"="你的做为";
+
+"valuePropositionP"="如何助人";
+
+"customerRelationshipsP"="如何交往";
+
+"customerSegmentsP"="你帮助谁";
+
+"keyResourceP"="你有什么";
+
+"channelsP"="如何宣传";
+
+"costStructureP"="你的付出";
+
+"revenueStreamsP"="你的收获";
+
+"keyPartnersPDesc"="谁能支持你产生价值或达到目标";
+
+"keyActivitiesPDesc"="为他人实施的基本的体力或脑力活动";
+
+"valuePropositionPDesc"="你能帮助他人完成什么，给他人带来什么利益";
+
+"customerRelationshipsPDesc"="你想同目标用户建立怎样的关系";
+
+"customerSegmentsPDesc"="即需要依赖你完成工作的人";
+
+"keyResourcePDesc"="你的知识、经验、技能或资产";
+
+"channelsPDesc"="怎样宣传自己、交付服务";
+
+"costStructurePDesc"="时间、精力、金钱，甚至压力";
+
+"revenueStreamsPDesc"="包括物质回报和非物质回报";
+
+
 "leanModel"="精益模型";
 
 "businessModel"="商业模型";
+
+"PersonalModel"="个人模型";
+
 

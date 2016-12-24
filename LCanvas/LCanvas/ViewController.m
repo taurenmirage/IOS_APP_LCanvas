@@ -10,6 +10,10 @@
 #import "ConstURL.h"
 #import "ContentListTableViewController.h"
 #import "CanvasNavigationViewController.h"
+#import <CoreText/CoreText.h>
+#import <MessageUI/MessageUI.h>
+
+
 
 @interface ViewController ()<NSFetchedResultsControllerDelegate>
 
@@ -92,7 +96,7 @@
     [self.revenueStream.layer setBorderWidth:1.0];   //边框宽度
     [self.revenueStream.layer setBorderColor:colorref];//边框颜色
     
-
+    self.generatePDF.hidden = true;
     
     
 }
@@ -893,6 +897,19 @@
         [self.channels setTitle:NSLocalizedString ( @"channelsB" , nil ) forState:UIControlStateNormal];
         [self.revenueStream setTitle:NSLocalizedString ( @"revenueStreamsB" , nil ) forState:UIControlStateNormal];
     }
+    else if ([self.currentCanvasType isEqualToString:@"2"])
+    {
+        //business model
+        [self.problem setTitle:NSLocalizedString ( @"keyPartnersP" , nil ) forState:UIControlStateNormal];
+        [self.solution setTitle:NSLocalizedString ( @"keyActivitiesP" , nil ) forState:UIControlStateNormal];
+        [self.keyMetrics setTitle:NSLocalizedString ( @"keyResourceP" , nil ) forState:UIControlStateNormal];
+        [self.costStructure setTitle:NSLocalizedString ( @"costStructureP" , nil ) forState:UIControlStateNormal];
+        [self.uniqueValue setTitle:NSLocalizedString ( @"valuePropositionP" , nil ) forState:UIControlStateNormal];
+        [self.customerSegments setTitle:NSLocalizedString ( @"customerSegmentsP" , nil ) forState:UIControlStateNormal];
+        [self.unfairAdvantage setTitle:NSLocalizedString ( @"customerRelationshipsP" , nil ) forState:UIControlStateNormal];
+        [self.channels setTitle:NSLocalizedString ( @"channelsP" , nil ) forState:UIControlStateNormal];
+        [self.revenueStream setTitle:NSLocalizedString ( @"revenueStreamsP" , nil ) forState:UIControlStateNormal];
+    }
     else
     {
         //lean model
@@ -907,6 +924,195 @@
         [self.revenueStream setTitle:NSLocalizedString ( @"revenue" , nil ) forState:UIControlStateNormal];
     }
 }
+
+- (IBAction)generatePDF:(UIButton *)sender {
+    /*NSString *fileName;
+    
+    fileName = [self getPDFFileName];
+    
+    [self savePDF:fileName];
+    
+    [self sendEmailAction];
+     */
+    
+}
+
+
+//*
+// Use Core Text to draw the text in a frame on the page.
+- (CFRange)renderPage:(NSInteger)pageNum withTextRange:(CFRange)currentRange
+       andFramesetter:(CTFramesetterRef)framesetter
+{
+    // Get the graphics context.
+    CGContextRef  currentContext = UIGraphicsGetCurrentContext();
+    
+    // Put the text matrix into a known state. This ensures
+    // that no old scaling factors are left in place.
+    CGContextSetTextMatrix(currentContext, CGAffineTransformIdentity);
+    
+    // Create a path object to enclose the text. Use 72 point
+    // margins all around the text.
+    CGRect    frameRect = CGRectMake(72, 72, 468, 648);
+    CGMutablePathRef framePath = CGPathCreateMutable();
+    CGPathAddRect(framePath, NULL, frameRect);
+    
+    // Get the frame that will do the rendering.
+    // The currentRange variable specifies only the starting point. The framesetter
+    // lays out as much text as will fit into the frame.
+    CTFrameRef frameRef = CTFramesetterCreateFrame(framesetter, currentRange, framePath, NULL);
+    CGPathRelease(framePath);
+    
+    // Core Text draws from the bottom-left corner up, so flip
+    // the current transform prior to drawing.
+    CGContextTranslateCTM(currentContext, 0, 792);
+    CGContextScaleCTM(currentContext, 1.0, -1.0);
+    
+    // Draw the frame.
+    CTFrameDraw(frameRef, currentContext);
+    
+    // Update the current range based on what was drawn.
+    currentRange = CTFrameGetVisibleStringRange(frameRef);
+    currentRange.location += currentRange.length;
+    currentRange.length = 0;
+    CFRelease(frameRef);
+    
+    return currentRange;
+}
+
+- (void)drawPageNumber:(NSInteger)pageNum
+{
+    NSString* pageString = [NSString stringWithFormat:@"Page %d", pageNum];
+    UIFont* theFont = [UIFont systemFontOfSize:12];
+    CGSize maxSize = CGSizeMake(612, 72);
+    
+    CGSize pageStringSize = [pageString sizeWithFont:theFont
+                                   constrainedToSize:maxSize
+                                       lineBreakMode:UILineBreakModeClip];
+    CGRect stringRect = CGRectMake(((612.0 - pageStringSize.width) / 2.0),
+                                   720.0 + ((72.0 - pageStringSize.height) / 2.0),
+                                   pageStringSize.width,
+                                   pageStringSize.height);
+    
+    [pageString drawInRect:stringRect withFont:theFont];
+}
+
+-(NSString*)getPDFFileName{
+    return (NSString *)[[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"lv_demo.pdf"];
+}
+
+- (void)savePDF:(NSString *)fileName
+{
+    NSString *content;
+    
+    content = @"TEST";
+    
+    CFAttributedStringRef currentText = CFAttributedStringCreate(NULL, (CFStringRef)content, NULL);
+
+    if (currentText) {
+        CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString(currentText);
+        if (framesetter) {
+            
+           // NSString* pdfFileName = [self getPDFFileName];
+            
+            NSString* pdfFileName = fileName;
+            
+            NSLog(@"path[%@]", pdfFileName);
+            // Create the PDF context using the default page size of 612 x 792.
+            UIGraphicsBeginPDFContextToFile(pdfFileName, CGRectZero, nil);
+            
+            CFRange currentRange = CFRangeMake(0, 0);
+            NSInteger currentPage = 0;
+            BOOL done = NO;
+            
+            do {
+                // Mark the beginning of a new page.
+                UIGraphicsBeginPDFPageWithInfo(CGRectMake(0, 0, 612, 792), nil);
+                //*
+                // Draw a page number at the bottom of each page
+                currentPage++;
+                [self drawPageNumber:currentPage];
+                
+                // Render the current page and update the current range to
+                // point to the beginning of the next page.
+                //currentRange = [self renderPageWithTextRange:currentRange andFramesetter:framesetter];
+                currentRange = [self renderPage:currentPage withTextRange:currentRange andFramesetter:framesetter];
+                //*/
+                // If we're at the end of the text, exit the loop.
+                if (currentRange.location == CFAttributedStringGetLength((CFAttributedStringRef)currentText))
+                    done = YES;
+            } while (!done);
+            
+            // Close the PDF context and write the contents out.
+            UIGraphicsEndPDFContext();
+            
+            // Release the framewetter.
+            CFRelease(framesetter);
+            
+        } else {
+            NSLog(@"Could not create the framesetter needed to lay out the atrributed string.");
+        }
+        // Release the attributed string.
+        CFRelease(currentText);
+    } else {
+        NSLog(@"Could not create the attributed string for the framesetter");
+    }
+
+    
+}
+
+
+- (void)sendEmailAction
+{
+    // 邮件服务器
+    MFMailComposeViewController *mailCompose = [[MFMailComposeViewController alloc] init];
+    // 设置邮件代理
+    [mailCompose setMailComposeDelegate:self];
+    // 设置邮件主题
+    [mailCompose setSubject:@"Canvas PDF"];
+    // 设置收件人
+    [mailCompose setToRecipients:@[@"1147626297@qq.com"]];
+    /**
+     *  设置邮件的正文内容
+     */
+    NSString *emailContent = @"Canvas PDF";
+    // 是否为HTML格式
+    [mailCompose setMessageBody:emailContent isHTML:NO];
+    // 如使用HTML格式，则为以下代码
+    //	[mailCompose setMessageBody:@"<html><body><p>Hello</p><p>World！</p></body></html>" isHTML:YES];
+    /**
+     *  添加附件
+     */
+    
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"Documents" ofType:@"pdf"];
+    NSData *pdf = [NSData dataWithContentsOfFile:file];
+    [mailCompose addAttachmentData:pdf mimeType:@"" fileName:@"lv_demo"];
+    // 弹出邮件发送视图
+    [self presentViewController:mailCompose animated:YES completion:nil];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller
+          didFinishWithResult:(MFMailComposeResult)result
+                        error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled: // 用户取消编辑
+            NSLog(@"Mail send canceled...");
+            break;
+        case MFMailComposeResultSaved: // 用户保存邮件
+            NSLog(@"Mail saved...");
+            break;
+        case MFMailComposeResultSent: // 用户点击发送
+            NSLog(@"Mail sent...");
+            break;
+        case MFMailComposeResultFailed: // 用户尝试保存或发送邮件失败
+            NSLog(@"Mail send errored: %@...", [error localizedDescription]);
+            break;
+    }
+    // 关闭邮件发送视图
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 
 @end

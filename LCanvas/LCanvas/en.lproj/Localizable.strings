@@ -126,7 +126,46 @@
 
 "revenueStreamsBDesc"="How much will you make?";
 
+"keyPartnersP"="Key Partners";
+
+"keyActivitiesP"="Key Activities";
+
+"valuePropositionP"="Value Proposition";
+
+"customerRelationshipsP"="Customer Relationship";
+
+"customerSegmentsP"="Customer Segments";
+
+"keyResourceP"="Key Resource";
+
+"channelsP"="Channels";
+
+"costStructureP"="Cost Structure";
+
+"revenueStreamsP"="Revenue Streams";
+
+"keyPartnersPDesc"="Who will help you?";
+
+"keyActivitiesPDesc"="How do you do it?";
+
+"valuePropositionPDesc"="What do you do?";
+
+"customerRelationshipsPDesc"="How do you interact?";
+
+"customerSegmentsPDesc"="Who do you help?";
+
+"keyResourcePDesc"="What do you need?";
+
+"channelsPDesc"="How do you reach them?";
+
+"costStructurePDesc"="What will it cost?";
+
+"revenueStreamsPDesc"="How much will you make?";
+
 "leanModel"="Lean Model";
 
 "businessModel"="Business Model";
+
+"PersonalModel"="Person Model";
+
 

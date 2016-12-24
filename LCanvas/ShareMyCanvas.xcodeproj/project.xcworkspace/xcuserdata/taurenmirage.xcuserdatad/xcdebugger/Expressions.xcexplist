@@ -3,6 +3,22 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[ViewController generatePDF:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self getPDFFileName]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController getPDFFileName]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[NSHomeDirectory() stringByAppendingPathComponent:@&quot;Documents&quot;] stringByAppendingPathComponent:@&quot;lv_demo.pdf&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[UserTableViewController readNSUserDefaults]:UserTableViewController.m">
          <PersistentStrings>
             <PersistentString
