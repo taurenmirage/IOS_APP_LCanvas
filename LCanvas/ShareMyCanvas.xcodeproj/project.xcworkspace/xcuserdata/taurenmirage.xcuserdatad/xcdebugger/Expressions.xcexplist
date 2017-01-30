@@ -3,6 +3,20 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[SignInViewController checkUserName]:SignInViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController getPDFFileName]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[NSHomeDirectory() stringByAppendingPathComponent:@&quot;Documents&quot;] stringByAppendingPathComponent:@&quot;lv_demo.pdf&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController makePDFContent]:ViewController.m">
+      </ContextState>
+      <ContextState
          contextName = "-[ViewController generatePDF:]:ViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -11,10 +25,38 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[ViewController getPDFFileName]:ViewController.m">
+         contextName = "-[ViewController savePDF]:ViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[[NSHomeDirectory() stringByAppendingPathComponent:@&quot;Documents&quot;] stringByAppendingPathComponent:@&quot;lv_demo.pdf&quot;]">
+               value = "[self getPDFFileName]">
+            </PersistentString>
+            <PersistentString
+               value = "[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]">
+            </PersistentString>
+            <PersistentString
+               value = "NSTemporaryDirectory()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SignInViewController checkPassword]:SignInViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.password.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ViewController makeContentDetail:]:ViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[_fetchContentResultController.fetchedObjects count]">
+            </PersistentString>
+            <PersistentString
+               value = "[_fetchContentResultController.fetchedObjects objectAtIndex:i]">
+            </PersistentString>
+            <PersistentString
+               value = "record.content_type">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,15 +72,12 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[SignInViewController checkPassword]:SignInViewController.m">
+         contextName = "-[ContentListTableViewController tableView:cellForRowAtIndexPath:]:ContentListTableViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.password.text">
+               value = "indexPath.row">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[SignInViewController checkUserName]:SignInViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

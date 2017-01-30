@@ -91,12 +91,14 @@
     [self.channels.layer setBorderWidth:1.0];   //边框宽度
     [self.channels.layer setBorderColor:colorref];//边框颜色
     
+    
+    
     [self.revenueStream.layer setMasksToBounds:YES];
     [self.revenueStream.layer setCornerRadius:8.0]; //设置矩圆角半径
     [self.revenueStream.layer setBorderWidth:1.0];   //边框宽度
     [self.revenueStream.layer setBorderColor:colorref];//边框颜色
     
-    self.generatePDF.hidden = true;
+    //self.generatePDF.hidden = true;
     
     
 }
@@ -190,6 +192,48 @@
     
     
 }
+
+- (void) fetchContentDataFromCoreData{
+    
+    NSManagedObjectContext *mainContext = [[KICoreDataManager sharedInstance] mainManagedObjectContext];
+    KIFetchRequest *fetchRequest = [[KIFetchRequest alloc] initWithEntity:[Content entity] context:mainContext];
+    
+    if ([self.canvas_id isEqualToString:@""])
+    {
+        NSLog(@"No Canvas");
+    }
+    else if(self.canvas_id == nil)
+    {
+        NSLog(@"No Canvas");
+    }
+    else
+    {
+
+            NSString *predicates;
+            
+            predicates = @"active_flag == 1 ";
+            
+        
+            predicates = [predicates stringByAppendingString:@" and canvas_id == "];
+            
+            predicates = [predicates stringByAppendingString:self.canvas_id];
+            
+            [fetchRequest fetchObjectWithPredicates:predicates error:nil];
+            _fetchContentResultController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                                                         managedObjectContext:mainContext
+                                                                           sectionNameKeyPath:nil
+                                                                                    cacheName:nil];
+        
+    }
+    
+    
+    [_fetchContentResultController setDelegate:self];
+    [_fetchContentResultController performFetch:nil];
+    
+    
+    
+}
+
 
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -494,6 +538,7 @@
     self.unfairAdvantage.hidden = visible;
     self.revenueStream.hidden = visible;
     self.report.hidden = visible;
+    self.generatePDF.hidden = visible;
     self.customerSegments.hidden = visible;
     
     if (visible != NO) {
@@ -926,14 +971,42 @@
 }
 
 - (IBAction)generatePDF:(UIButton *)sender {
-    /*NSString *fileName;
+ 
     
-    fileName = [self getPDFFileName];
+    UIAlertController *reportController = [UIAlertController alertControllerWithTitle:@"" message:NSLocalizedString ( @"msg010" , nil ) preferredStyle:UIAlertControllerStyleAlert];
     
-    [self savePDF:fileName];
     
-    [self sendEmailAction];
-     */
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString ( @"canncel" , nil ) style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString ( @"ok" , nil ) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        if ([MFMailComposeViewController canSendMail]) { // 用户已设置邮件账户
+            [self savePDF];
+            
+            [self sendEmailAction];
+        }
+        else
+        {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString ( @"failed" , nil ) message:NSLocalizedString ( @"msg011" , nil ) preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString ( @"ok" , nil ) style:UIAlertActionStyleDefault handler:nil];
+            
+            [alertController addAction:okAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+        
+        
+        
+        
+        
+    }];
+    
+    [reportController addAction:cancelAction];
+    [reportController addAction:okAction];
+    
+    [self presentViewController:reportController animated:YES completion:nil];
+
+    
+   
+     
     
 }
 
@@ -996,15 +1069,28 @@
     [pageString drawInRect:stringRect withFont:theFont];
 }
 
--(NSString*)getPDFFileName{
-    return (NSString *)[[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"lv_demo.pdf"];
-}
 
-- (void)savePDF:(NSString *)fileName
-{
+
+- (void)savePDF{
     NSString *content;
+
+    content = [self makePDFContent];
+
     
-    content = @"TEST";
+   // NSString *tmpDir = NSTemporaryDirectory();
+    
+   // NSString *applicationDocumentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    
+   //NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+   // NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    //fileName = path;
+    
+    NSArray *array=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    //PDF存储路径
+    NSString *path=[array[0] stringByAppendingPathComponent:@"mycanvas.pdf"];
+    
+    
     
     CFAttributedStringRef currentText = CFAttributedStringCreate(NULL, (CFStringRef)content, NULL);
 
@@ -1014,11 +1100,10 @@
             
            // NSString* pdfFileName = [self getPDFFileName];
             
-            NSString* pdfFileName = fileName;
             
-            NSLog(@"path[%@]", pdfFileName);
+            NSLog(@"path[%@]", path);
             // Create the PDF context using the default page size of 612 x 792.
-            UIGraphicsBeginPDFContextToFile(pdfFileName, CGRectZero, nil);
+            UIGraphicsBeginPDFContextToFile(path, CGRectZero, nil);
             
             CFRange currentRange = CFRangeMake(0, 0);
             NSInteger currentPage = 0;
@@ -1070,7 +1155,7 @@
     // 设置邮件主题
     [mailCompose setSubject:@"Canvas PDF"];
     // 设置收件人
-    [mailCompose setToRecipients:@[@"1147626297@qq.com"]];
+    [mailCompose setToRecipients:@[@""]];
     /**
      *  设置邮件的正文内容
      */
@@ -1083,9 +1168,13 @@
      *  添加附件
      */
     
-    NSString *file = [[NSBundle mainBundle] pathForResource:@"Documents" ofType:@"pdf"];
-    NSData *pdf = [NSData dataWithContentsOfFile:file];
-    [mailCompose addAttachmentData:pdf mimeType:@"" fileName:@"lv_demo"];
+    NSArray *array=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    //PDF存储路径
+    NSString *path=[array[0] stringByAppendingPathComponent:@"mycanvas.pdf"];
+    
+   
+    NSData *pdf = [NSData dataWithContentsOfFile:path];
+    [mailCompose addAttachmentData:pdf mimeType:@"" fileName:@"mycanvas.pdf"];
     // 弹出邮件发送视图
     [self presentViewController:mailCompose animated:YES completion:nil];
 }
@@ -1113,6 +1202,111 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (NSString *)makePDFContent{
+    NSString * tempContent;
+    
+    tempContent = [self.currentCanvasTitle substringToIndex:self.currentCanvasTitle.length -2];
+    
+    
+    tempContent = [tempContent stringByAppendingString:@"\n"];
+    
+    tempContent = [tempContent stringByAppendingString:@"\n"];
+    
+    [self fetchContentDataFromCoreData];
+    
+    if ([self.currentCanvasType isEqualToString:@"1"])
+    {
+        //business model
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"keyPartnersB" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"1"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"keyActivitiesB" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"2"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"keyResourceB" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"3"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"costStructureB" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"4"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"valuePropositionB" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"5"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"customerSegmentsB" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"6"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"customerRelationshipsB" , nil )];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"7"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"channelsB" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"8"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"revenueStreamsB" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"9"]];
+    }
+    else if ([self.currentCanvasType isEqualToString:@"2"])
+    {
+        //business model
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"keyPartnersP" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"1"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"keyActivitiesP" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"2"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"keyResourceP" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"3"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"costStructureP" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"4"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"valuePropositionP" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"5"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"customerSegmentsP" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"6"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"customerRelationshipsP" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"7"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"channelsP" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"8"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"revenueStreamsP" , nil )];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"9"]];
+    }
+    else
+    {
+        //lean model
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"problem" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"1"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"solution" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"2"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"key" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"3"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"cost" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"4"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"unique" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"5"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"customer" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"6"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"unfair" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"7"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"channel" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"8"]];
+        tempContent = [tempContent stringByAppendingString:NSLocalizedString ( @"revenue" , nil ) ];
+        tempContent = [tempContent stringByAppendingString:[self makeContentDetail:@"9"]];
+    }
+    
+    
+    return tempContent;
+}
 
+- (NSString *)makeContentDetail:(NSString *) contentType{
+    NSString *tempDetail;
+    NSInteger detailCount;
+    tempDetail = @"\n";
+    detailCount = 0;
+    
+    for (NSInteger i = 0; i < [_fetchContentResultController.fetchedObjects count]; i++)
+    {
+        Content *record = [_fetchContentResultController.fetchedObjects objectAtIndex:i];
+        if ([record.content_type isEqualToString:contentType])
+        {
+            detailCount = detailCount + 1 ;
+            tempDetail = [tempDetail stringByAppendingString:@"   "];
+            tempDetail = [tempDetail stringByAppendingString:[NSString stringWithFormat: @"%ld", (long)detailCount]];
+            tempDetail = [tempDetail stringByAppendingString:@"."];
+            tempDetail = [tempDetail stringByAppendingString:record.content];
+            tempDetail = [tempDetail stringByAppendingString:@"\n"];
+        }
+    }
+    
+    
+    return tempDetail;
+}
 
 @end

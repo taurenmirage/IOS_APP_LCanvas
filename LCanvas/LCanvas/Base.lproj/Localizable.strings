@@ -90,6 +90,10 @@
 
 "msg009"="选择画布类型。";
 
+"msg010"="是否导出PDF并通过邮件发送？";
+
+"msg011"="未启用邮件。";
+
 "keyPartnersB"="重要合伙人";
 
 "keyActivitiesB"="价值活动";
@@ -170,5 +174,7 @@
 "businessModel"="商业模型";
 
 "PersonalModel"="个人模型";
+
+"addContentTitle" = "追加内容";
 
 

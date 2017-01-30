@@ -17,6 +17,7 @@
 
 @interface ViewController : UIViewController{
     NSFetchedResultsController  *_fetchResultController;
+    NSFetchedResultsController  *_fetchContentResultController;
 }
 @property (nonatomic,strong) NSArray *canvasList;
 @property (nonatomic,strong) NSArray *contentList;

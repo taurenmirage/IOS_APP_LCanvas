@@ -11,11 +11,12 @@
 #import "NSManagedObject+KIAdditions.h"
 #import "NSManagedObjectContext+KIAdditions.h"
 #import "KIFetchRequest.h"
+#import "contentAddTableViewController.h"
 
 #import "Canvas.h"
 #import "Content.h"
 
-@interface ContentListTableViewController : UITableViewController{
+@interface ContentListTableViewController : UITableViewController<addContentDelegate>{
     NSFetchedResultsController  *_fetchResultController;
 }
 @property (nonatomic,strong) NSArray *canvasList;

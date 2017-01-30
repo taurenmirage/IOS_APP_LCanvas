@@ -10,7 +10,7 @@
 #import "ConstURL.h"
 #import "ContentNavigationViewController.h"
 
-@interface contentAddTableViewController ()<NSFetchedResultsControllerDelegate>
+@interface contentAddTableViewController ()<NSFetchedResultsControllerDelegate,CellSelectDelegate>
 
 @end
 
@@ -18,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+    
+    self.suggest_id = @"0";
     
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor colorWithRed:156.0/255.0 green:170.0/255.0 blue:209.0/255.0 alpha:1.0]};
   
@@ -25,9 +28,11 @@
     
     self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"back1920"]];
     
-    ContentNavigationViewController *rvc = (ContentNavigationViewController * )self.parentViewController;
+    //ContentNavigationViewController *rvc = (ContentNavigationViewController * )self.parentViewController;
     
-    self.content_type = rvc.contentType;
+    //self.content_type = rvc.contentType;
+    
+
     
     [self readNSUserDefaults];
     
@@ -42,6 +47,62 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    CGRect frame = self.view.frame;
+    frame.origin.y += 64;
+    frame.size.height  -= 64;
+    self.view.frame = frame;
+    
+    frame.origin.y = 0;
+    frame.size.height = 64;
+    
+    UINavigationBar *navigationBar = [[UINavigationBar alloc] initWithFrame:frame];
+    [navigationBar setOpaque:YES];
+    navigationBar.backgroundColor = [UIColor whiteColor];
+    
+    navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor colorWithRed:156.0/255.0 green:170.0/255.0 blue:209.0/255.0 alpha:1.0]};
+    
+    UINavigationItem *navigationItem = [[UINavigationItem alloc] initWithTitle:NSLocalizedString ( @"addContentTitle" , nil )];
+    UIBarButtonItem *leftbutton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(actionCancel)];
+    
+    leftbutton.tintColor = [UIColor colorWithRed:156.0/255.0 green:170.0/255.0 blue:209.0/255.0 alpha:1.0];
+    UIBarButtonItem *rightbutton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(actionDone)];
+    
+    rightbutton.tintColor = [UIColor colorWithRed:156.0/255.0 green:170.0/255.0 blue:209.0/255.0 alpha:1.0];
+    [navigationBar pushNavigationItem:navigationItem animated:YES];
+    [navigationItem setLeftBarButtonItem:leftbutton];
+    [navigationItem setRightBarButtonItem:rightbutton];
+    
+    [self.view.superview addSubview:navigationBar];
+    
+    //[super viewDidAppear:animated];
+    
+}
+
+
+-(void) actionCancel
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void) actionDone
+{
+    if ([self.content.text isEqualToString:@""])
+    {
+        [self.content becomeFirstResponder];
+    }
+    else
+    {
+        [self SaveCotentToServer];
+        
+        [self.delegate DoSomethingAfterAddContent];
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
 
 -(void)viewTapped:(UITapGestureRecognizer*)tapGr
 {
@@ -94,7 +155,7 @@
     
     
     
-    [postBody appendData:[[NSString stringWithFormat:@"content_type=%@&canvas_id=%@&content=%@&create_user=%@",_content_type,_canvas_id,tempCotentInfo,_user_id] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"content_type=%@&canvas_id=%@&content=%@&create_user=%@&suggest_id=%@",_content_type,_canvas_id,tempCotentInfo,_user_id,_suggest_id] dataUsingEncoding:NSUTF8StringEncoding]];
     
     [request setHTTPBody:postBody];
     
@@ -184,6 +245,8 @@
     else
     {
         [self SaveCotentToServer];
+        
+        [self.delegate DoSomethingAfterAddContent];
         
         [self dismissViewControllerAnimated:YES completion:nil];
     }
@@ -509,15 +572,40 @@
     return YES;
 }
 */
+- (void)DoSomethingEveryCellSelect:(NSString *)values passSuggestId:(NSString *)suggest_id
+{
+    NSLog(@"values:::%@",values);
+    NSLog(@"suggest:::%@",suggest_id);
+    self.content.text = values;
+    self.suggest_id = suggest_id;
+}
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    //ContentNavigationViewController *rvcParent = (ContentNavigationViewController * )self.parentViewController;
+    
+    //self.content_type = rvcParent.contentType;
+    
+    
+    
+    [self readNSUserDefaults];
+    
+    
+    if([segue.identifier isEqualToString:@"showSuggest"]) //"goView2"是SEGUE连线的标识
+    {
+        
+        SuggestContentTableViewController *rvc = segue.destinationViewController;
+        
+        rvc.content_type = self.content_type;
+        rvc.canvas_type = self.canvas_type;
+        rvc.delegate = self;
+    }
 }
-*/
+
 
 @end

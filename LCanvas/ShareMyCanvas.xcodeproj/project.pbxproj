@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9127E851E2B2BA200261165 /* Suggest+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D9127E821E2B2B9F00261165 /* Suggest+CoreDataClass.m */; };
+		D9127E861E2B2BA200261165 /* Suggest+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D9127E841E2B2B9F00261165 /* Suggest+CoreDataProperties.m */; };
+		D9127E891E2B2CA800261165 /* SuggestContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9127E881E2B2CA800261165 /* SuggestContentTableViewController.m */; };
+		D9127E8C1E2B32F500261165 /* SuggestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9127E8B1E2B32F500261165 /* SuggestTableViewCell.m */; };
 		D927F66B1C11C98200FB4675 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D927F66A1C11C98200FB4675 /* SignInViewController.m */; };
 		D95C6B691D60527100FE999C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C6B681D60527100FE999C /* CoreText.framework */; };
 		D95C6B6B1D60527D00FE999C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C6B6A1D60527D00FE999C /* CoreGraphics.framework */; };
@@ -64,6 +68,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D9127E811E2B2B9F00261165 /* Suggest+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Suggest+CoreDataClass.h"; sourceTree = "<group>"; };
+		D9127E821E2B2B9F00261165 /* Suggest+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Suggest+CoreDataClass.m"; sourceTree = "<group>"; };
+		D9127E831E2B2B9F00261165 /* Suggest+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Suggest+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D9127E841E2B2B9F00261165 /* Suggest+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Suggest+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D9127E871E2B2CA800261165 /* SuggestContentTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestContentTableViewController.h; sourceTree = "<group>"; };
+		D9127E881E2B2CA800261165 /* SuggestContentTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestContentTableViewController.m; sourceTree = "<group>"; };
+		D9127E8A1E2B32F500261165 /* SuggestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestTableViewCell.h; sourceTree = "<group>"; };
+		D9127E8B1E2B32F500261165 /* SuggestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestTableViewCell.m; sourceTree = "<group>"; };
 		D927F6691C11C98200FB4675 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		D927F66A1C11C98200FB4675 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		D95C6B681D60527100FE999C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -260,6 +272,8 @@
 				D927F66A1C11C98200FB4675 /* SignInViewController.m */,
 				D98F046B1C12BC7F00A1D1F7 /* ContentDetailViewController.h */,
 				D98F046C1C12BC7F00A1D1F7 /* ContentDetailViewController.m */,
+				D9127E871E2B2CA800261165 /* SuggestContentTableViewController.h */,
+				D9127E881E2B2CA800261165 /* SuggestContentTableViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -282,6 +296,10 @@
 		D98624CB1C007F8B00B99477 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D9127E811E2B2B9F00261165 /* Suggest+CoreDataClass.h */,
+				D9127E821E2B2B9F00261165 /* Suggest+CoreDataClass.m */,
+				D9127E831E2B2B9F00261165 /* Suggest+CoreDataProperties.h */,
+				D9127E841E2B2B9F00261165 /* Suggest+CoreDataProperties.m */,
 				D9A5311B1CC26599000C73AC /* Canvas+CoreDataProperties.h */,
 				D9A5311C1CC26599000C73AC /* Canvas+CoreDataProperties.m */,
 				D98624E11C008A9B00B99477 /* User+CoreDataProperties.h */,
@@ -304,6 +322,8 @@
 			children = (
 				D98624EB1C0163D800B99477 /* ContentTableViewCell.h */,
 				D98624EC1C0163D800B99477 /* ContentTableViewCell.m */,
+				D9127E8A1E2B32F500261165 /* SuggestTableViewCell.h */,
+				D9127E8B1E2B32F500261165 /* SuggestTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -449,8 +469,10 @@
 				D98624E51C008A9B00B99477 /* User+CoreDataProperties.m in Sources */,
 				D98624C11C007F4600B99477 /* NSManagedObject+KIAdditions.m in Sources */,
 				D9A5311D1CC26599000C73AC /* Canvas+CoreDataProperties.m in Sources */,
+				D9127E8C1E2B32F500261165 /* SuggestTableViewCell.m in Sources */,
 				D98F046D1C12BC7F00A1D1F7 /* ContentDetailViewController.m in Sources */,
 				D98624C61C007F5000B99477 /* KIFetchRequest.m in Sources */,
+				D9127E851E2B2BA200261165 /* Suggest+CoreDataClass.m in Sources */,
 				D98624CA1C007F7400B99477 /* ConstURL.m in Sources */,
 				D98624F31C098D5A00B99477 /* contentAddTableViewController.m in Sources */,
 				D98624E91C01611F00B99477 /* ContentListTableViewController.m in Sources */,
@@ -464,6 +486,8 @@
 				D98624831C000FBD00B99477 /* main.m in Sources */,
 				D98624DF1C008A1C00B99477 /* Content+CoreDataProperties.m in Sources */,
 				D98624CE1C007F9E00B99477 /* Model.xcdatamodeld in Sources */,
+				D9127E891E2B2CA800261165 /* SuggestContentTableViewController.m in Sources */,
+				D9127E861E2B2BA200261165 /* Suggest+CoreDataProperties.m in Sources */,
 				D98624ED1C0163D800B99477 /* ContentTableViewCell.m in Sources */,
 				D98624E01C008A1C00B99477 /* Content.m in Sources */,
 				D98624C71C007F5000B99477 /* KICoreDataManager.m in Sources */,
@@ -631,6 +655,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8RD8J96Y46;
 				INFOPLIST_FILE = LCanvas/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Fuyiwen.ShareMyCanvas;
 				PRODUCT_NAME = ShareMyCanvas;
@@ -644,6 +669,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8RD8J96Y46;
 				INFOPLIST_FILE = LCanvas/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Fuyiwen.ShareMyCanvas;
 				PRODUCT_NAME = ShareMyCanvas;

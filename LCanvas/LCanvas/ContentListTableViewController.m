@@ -12,7 +12,7 @@
 #import "ContentNavigationViewController.h"
 #import "COntentDetailViewController.h"
 
-@interface ContentListTableViewController ()<NSFetchedResultsControllerDelegate>
+@interface ContentListTableViewController ()<NSFetchedResultsControllerDelegate,addContentDelegate>
 
 @end
 
@@ -500,6 +500,14 @@
     
 }
 
+- (void)DoSomethingAfterAddContent{
+    [self.viewControl setSelectedSegmentIndex:1];
+    self.viewFlag =@"0";
+    [self fetchCanvasDataFromCoreData];
+    [self fetchDataFromCoreData];
+    [self.tableView reloadData];
+}
+
 
 /*
 // Override to support rearranging the table view.
@@ -524,9 +532,13 @@
     // Pass the selected object to the new view controller.
     if([segue.identifier isEqualToString:@"showNewContent"]) //"goView2"是SEGUE连线的标识
     {
-        ContentNavigationViewController *rvc = segue.destinationViewController;
+        contentAddTableViewController *rvc = segue.destinationViewController;
         
-        rvc.contentType = self.contentType;
+        rvc.content_type = self.contentType;
+        
+        
+        
+        rvc.delegate = self;
         
     }
     else if([segue.identifier isEqualToString:@"showDetail"])
@@ -538,6 +550,8 @@
         ContentDetailViewController *rvc = segue.destinationViewController;
         
         rvc.content = cell.content.text;
+        
+       
 
     }
 }

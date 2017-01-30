@@ -90,6 +90,10 @@
 
 "msg009"="Select canvas type.";
 
+"msg010"="Output the PDF and send by mail？";
+
+"msg011"="Did not set any mail accout yet.";
+
 "keyPartnersB"="Key Partners";
 
 "keyActivitiesB"="Key Activities";
@@ -168,4 +172,5 @@
 
 "PersonalModel"="Person Model";
 
+"addContentTitle" = "Add Content";
 
