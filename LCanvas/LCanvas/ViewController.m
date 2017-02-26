@@ -33,9 +33,14 @@
     
     self.addNew.hidden = YES;
     
-  
+    UIImage *backGroundImage = [UIImage imageNamed:@"back1920"];
     
-     self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"back1920"] ];
+    //backGroundImage = [backGroundImage resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0) resizingMode:UIImageResizingModeStretch];
+
+    self.view.layer.contents = (id)backGroundImage.CGImage;
+    //self.view.backgroundColor = [UIColor colorWithPatternImage: backGroundImage ];
+    
+    
     
     [self readNSUserDefaults];
     
@@ -49,6 +54,29 @@
 
 
 -(void)setButton{
+    
+    CGRect rect = [[UIScreen mainScreen] bounds];
+    CGSize size = rect.size;
+    CGFloat width = size.width;
+    CGFloat height = size.height;
+    
+    self.problem.frame = CGRectMake(5, 80, width/2.5, height/8);
+    //[self.problem setBounds:CGRectMake(0, 0, width, height)];
+    self.solution.frame = CGRectMake(5, 80 + height/8 +10, width/3, height/8);
+    self.keyMetrics.frame = CGRectMake(5, 80 + height/8*2 +20, width/3, height/8);
+    self.costStructure.frame = CGRectMake(5, 80 + height/8*3 +30, width/2.5, height/8);
+    self.customerSegments.frame = CGRectMake(width - width/2.5 -5, 80 , width/2.5, height/8);
+    self.unfairAdvantage.frame = CGRectMake(width - width/3 -5, 80 + height/8 +10, width/3, height/8);
+    self.channels.frame = CGRectMake(width - width/3 -5, 80 + height/8*2 +20, width/3, height/8);
+    self.revenueStream.frame = CGRectMake(width - width/2.5 -5, 80 + height/8*3 +30, width/2.5, height/8);
+    
+    self.uniqueValue.frame = CGRectMake(width/2 - width/8, 80 + height/8 +10, width/4, height/8*2 + 10);
+    
+    self.report.frame = CGRectMake(5, height-110, width/4, 100);
+    
+    self.generatePDF.frame = CGRectMake(width - width/4 - 5, height-110, width/4, 100);
+    
+    
     [self.problem.layer setMasksToBounds:YES];
     [self.problem.layer setCornerRadius:8.0]; //设置矩圆角半径
     [self.problem.layer setBorderWidth:1.0];   //边框宽度
@@ -99,6 +127,11 @@
     [self.revenueStream.layer setBorderColor:colorref];//边框颜色
     
     //self.generatePDF.hidden = true;
+    
+    if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad){
+     
+        
+    }
     
     
 }
@@ -400,9 +433,20 @@
     
     [alertController addAction:cancel];
     
-     if ([self.canvasList count] != 0) {
+    if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad){
+        //iPad 版本代码;
+        [alertController setModalPresentationStyle:UIModalPresentationPopover];
+        
+        UIPopoverPresentationController *popPresenter = [alertController
+                                                         popoverPresentationController];
+        
+        popPresenter.sourceView = self.canvasTitle;
+        popPresenter.sourceRect = self.canvasTitle.bounds;
+    }
+    
+    if ([self.canvasList count] != 0) {
           [self presentViewController:alertController animated:YES completion:nil];
-     }
+    }
     
    
     
@@ -453,6 +497,16 @@
         [searchController addAction:cancelAction];
         [searchController addAction:okAction];
         
+        if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad){
+            //iPad 版本代码;
+            [alertController setModalPresentationStyle:UIModalPresentationPopover];
+            
+            UIPopoverPresentationController *popPresenter = [alertController
+                                                             popoverPresentationController];
+            
+             popPresenter.barButtonItem = self.editCanvas;
+        }
+        
         [self presentViewController:searchController animated:YES completion:nil];
         
      
@@ -465,6 +519,16 @@
     }
     [alertController addAction:newAction];
     [alertController addAction:searchAction];
+    
+    if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad){
+        //iPad 版本代码;
+        [alertController setModalPresentationStyle:UIModalPresentationPopover];
+        
+        UIPopoverPresentationController *popPresenter = [alertController
+                                                         popoverPresentationController];
+        
+        popPresenter.barButtonItem = self.editCanvas;
+    }
     
     
     [self presentViewController:alertController animated:YES completion:nil];

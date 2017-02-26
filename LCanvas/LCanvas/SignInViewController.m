@@ -20,10 +20,9 @@
     
     [self setVisible:NO];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"back1920"]];
-
+    UIImage *backGroundImage = [UIImage imageNamed:@"back1920"];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"back1920"] ];
+    self.view.layer.contents = (id)backGroundImage.CGImage;
     
     // Do any additional setup after loading the view.
     UITapGestureRecognizer *tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped:)];

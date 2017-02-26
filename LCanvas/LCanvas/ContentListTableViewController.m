@@ -33,7 +33,9 @@
     
     
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"back1920"]];
+    UIImage *backGroundImage = [UIImage imageNamed:@"back1920"];
+    
+    self.view.layer.contents = (id)backGroundImage.CGImage;
     
     //[self.viewType setTitle:@"View active" forState:UIControlStateNormal];
     self.viewFlag =@"1";

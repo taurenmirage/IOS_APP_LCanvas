@@ -19,7 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"back1920"] ];
+    UIImage *backGroundImage = [UIImage imageNamed:@"back1920"];
+    
+    self.view.layer.contents = (id)backGroundImage.CGImage;
 
     [self fetchSuggestList];
     

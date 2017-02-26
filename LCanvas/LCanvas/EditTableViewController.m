@@ -23,7 +23,9 @@
     
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor colorWithRed:156.0/255.0 green:170.0/255.0 blue:209.0/255.0 alpha:1.0]};
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"back1920"]];
+    UIImage *backGroundImage = [UIImage imageNamed:@"back1920"];
+    
+    self.view.layer.contents = (id)backGroundImage.CGImage;
     
     [self readNSUserDefaults];
     
@@ -529,7 +531,17 @@
     [alertController addAction:leanAction];
     [alertController addAction:businessAction];
     [alertController addAction:PersonbusinessAction];
-    
+        
+        if(UI_USER_INTERFACE_IDIOM()==UIUserInterfaceIdiomPad){
+            //iPad 版本代码;
+            [alertController setModalPresentationStyle:UIModalPresentationPopover];
+            
+            UIPopoverPresentationController *popPresenter = [alertController
+                                                             popoverPresentationController];
+            
+            popPresenter.sourceView = sender;
+            popPresenter.sourceRect = sender.bounds;
+        }
     
     [self presentViewController:alertController animated:YES completion:nil];
     }

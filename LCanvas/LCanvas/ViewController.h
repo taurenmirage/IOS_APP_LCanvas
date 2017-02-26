@@ -62,6 +62,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *generatePDF;
 
 @property (strong, nonatomic) IBOutlet UIButton *canvasTitle;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *editCanvas;
 
 @property (strong, nonatomic) NSArray *pickerData;
 

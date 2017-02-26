@@ -21,7 +21,9 @@
     
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:18],NSForegroundColorAttributeName:[UIColor colorWithRed:156.0/255.0 green:170.0/255.0 blue:209.0/255.0 alpha:1.0]};
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"back1920"]];
+    UIImage *backGroundImage = [UIImage imageNamed:@"back1920"];
+    
+    self.view.layer.contents = (id)backGroundImage.CGImage;
     
     [self readNSUserDefaults];
     
