@@ -25,6 +25,7 @@
 @property (nonatomic,strong) NSString *contentType;
 @property (nonatomic,strong) NSString *canvasID;
 @property (strong, nonatomic) IBOutlet UIButton *viewType;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *add;
 
 @property (strong, nonatomic) NSString *viewFlag;
 
@@ -39,6 +40,8 @@
 @property (strong, nonatomic) NSString *owner_user;
 
 @property (nonatomic) BOOL isOwner;
+
+@property (nonatomic) BOOL isEditable;
 
 
 

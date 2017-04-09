@@ -113,7 +113,16 @@
         self.isOwner = NO;
     }
     
-    
+    if ([record.editable_flag isEqualToString:@"0"])
+    {
+        self.isEditable = NO;
+        self.add.enabled = NO;
+    }
+    else
+    {
+        self.isEditable = YES;
+        self.add.enabled = YES;
+    }
     
     
     

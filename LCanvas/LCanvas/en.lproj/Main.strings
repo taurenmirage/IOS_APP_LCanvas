@@ -144,3 +144,12 @@
 "x60-J9-Sjl.headerTitle" = " ";
 
 "rQZ-ya-5MC.normalTitle" = "Output PDF";
+
+/* Class = "UITabBarItem"; title = "Me"; ObjectID = "oM6-8B-glx"; */
+"oM6-8B-glx.title" = "Me";
+
+/* Class = "UITabBarItem"; title = "Share"; ObjectID = "Fb8-8e-9W5"; */
+"Fb8-8e-9W5.title" = "Share";
+
+/* Class = "UITableViewSection"; headerTitle = "Share"; ObjectID = "VGE-9G-baI"; */
+"VGE-9G-baI.title" = "Share";

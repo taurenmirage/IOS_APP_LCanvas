@@ -27,7 +27,7 @@
     
     [self setButton];
     
-    
+   
     
     [self setButtonVisible:YES];
     
@@ -276,10 +276,16 @@
     
     [self readNSUserDefaults];
     
+    
 
 
     
     [self fetchCanvasList];
+    
+    if (![self.canvas_id isEqualToString:@""] && self.canvas_id != nil)
+    {
+        [self fetchCanvasListByCanvasID];
+    }
     
     [self fetchDataFromCoreData];
     
@@ -584,12 +590,72 @@
         }
         else
         {
+            
             [self setButtonVisible:YES];
+
         }
        
         
     }
 
+}
+
+- (void)fetchCanvasListByCanvasID{
+    
+
+    
+    
+    NSString *tempURL;
+   
+    
+    tempURL = [serverURL stringByAppendingString:@"/lcanvas/index.php/api/canvasbyid/"];
+    tempURL = [tempURL stringByAppendingString:self.canvas_id];
+    
+    self.searchForUniqueCanvas = nil;
+    
+    
+    
+    NSURL *url= [NSURL URLWithString:tempURL];
+    NSError *error = nil;
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSData *response = [NSURLConnection sendSynchronousRequest: request returningResponse:nil error:&error];
+    
+    NSLog(@"Error: %@", error);
+    
+    if (error != nil) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString ( @"error" , nil ) message:NSLocalizedString ( @"connecterror" , nil ) preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString ( @"ok" , nil ) style:UIAlertActionStyleDefault handler:nil];
+        
+        [alertController addAction:okAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+    }
+    else{
+        NSDictionary *propertyListResults =[NSJSONSerialization JSONObjectWithData:response options:0 error:NULL ];
+        
+        self.searchForUniqueCanvas = (NSArray *)propertyListResults;
+        
+        NSLog(@"CanvasByUnqueidList = %@",self.searchForUniqueCanvas);
+        
+        if (self.searchForUniqueCanvas != nil) {
+            [self setButtonVisible:NO];
+            [self setButtonTitleByType];
+            [self saveSearchByCanvasIDCanvasDataToCoreData];
+            
+        }
+        else
+        {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString ( @"failed" , nil ) message:NSLocalizedString ( @"msg006" , nil ) preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString ( @"ok" , nil ) style:UIAlertActionStyleDefault handler:nil];
+            
+            [alertController addAction:okAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+        
+        
+        
+    }
+    
 }
 
 - (void)setButtonVisible:(BOOL) visible{
@@ -774,6 +840,55 @@
         
         [context commitUpdate];
     }
+}
+
+- (void) saveSearchByCanvasIDCanvasDataToCoreData {
+    NSManagedObjectContext *context = [[KICoreDataManager sharedInstance] createManagedObjectContext];
+    
+    NSArray *record;
+    NSString *tempForPicker;
+    
+    //self.canvasListForPicker = [NSMutableArray arrayWithCapacity:[self.canvasList count]];
+    
+    record = [self.searchForUniqueCanvas valueForKey:[ NSString  stringWithFormat:  @"%lu" , (unsigned long)0]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    Canvas *canvas = [Canvas insertWithContext:context withValue:[record valueForKeyPath:@"canvas_id"] forAttribute:@"canvas_id"];
+    
+    tempForPicker = [record valueForKeyPath:@"canvas_title"];
+    tempForPicker = [tempForPicker stringByAppendingString:@"|"];
+    tempForPicker = [tempForPicker stringByAppendingString:[record valueForKeyPath:@"canvas_id"]];
+    
+    self.canvas_id = [record valueForKeyPath:@"canvas_id"];
+    
+    self.currentCanvasTitle = [[record valueForKeyPath:@"canvas_title"] stringByAppendingString:@"▾"];
+    
+    self.currentCanvasType = [record valueForKeyPath:@"model_type"];
+    
+    [self saveToUserDefault];
+    
+    [self setButtonTitleByType];
+    
+    [self.canvasTitle setTitle:self.currentCanvasTitle forState:UIControlStateNormal];
+    
+    [self.canvasListForPicker addObject:tempForPicker];
+    canvas.canvas_title = [record valueForKeyPath:@"canvas_title"];
+    canvas.canvas_description = [record valueForKeyPath:@"canvas_description"];
+    canvas.display_name = [record valueForKeyPath:@"display_name"];
+    canvas.open_flag = [record valueForKeyPath:@"open_flag"];
+    canvas.unique_id = [record valueForKeyPath:@"unique_id"];
+    canvas.editable_flag = [record valueForKeyPath:@"editable_flag"];
+    canvas.create_user = [record valueForKeyPath:@"create_user"];
+    canvas.model_type = [record valueForKeyPath:@"model_type"];
+    canvas.active_flag = [record valueForKeyPath:@"active_flag"];
+    canvas.create_date = [dateFormatter dateFromString:[record valueForKeyPath:@"create_date"]];
+    
+    [context commitUpdate];
+    
+    
+    [self fetchContentList];
+    
 }
 
 - (void) saveSearchByUniqueIDCanvasDataToCoreData {

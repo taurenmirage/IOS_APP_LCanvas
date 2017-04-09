@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16C67" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Xcode 7.0" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="Canvas" representedClassName="Canvas" syncable="YES">
         <attribute name="active_flag" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="canvas_description" optional="YES" attributeType="String" syncable="YES"/>
@@ -24,6 +24,13 @@
         <attribute name="create_user" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="display_name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Share" representedClassName="Share" syncable="YES">
+        <attribute name="canvas_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="canvas_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="canvas_title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="model_type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="owner_user" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Suggest" representedClassName="Suggest" syncable="YES">
         <attribute name="active_flag" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
@@ -42,7 +49,8 @@
     <elements>
         <element name="Canvas" positionX="-54" positionY="0" width="128" height="225"/>
         <element name="Content" positionX="-36" positionY="90" width="128" height="165"/>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="Suggest" positionX="-45" positionY="99" width="128" height="135"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Share" positionX="-45" positionY="99" width="128" height="120"/>
     </elements>
 </model>

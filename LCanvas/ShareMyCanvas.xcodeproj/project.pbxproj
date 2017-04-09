@@ -12,6 +12,11 @@
 		D9127E891E2B2CA800261165 /* SuggestContentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9127E881E2B2CA800261165 /* SuggestContentTableViewController.m */; };
 		D9127E8C1E2B32F500261165 /* SuggestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D9127E8B1E2B32F500261165 /* SuggestTableViewCell.m */; };
 		D927F66B1C11C98200FB4675 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D927F66A1C11C98200FB4675 /* SignInViewController.m */; };
+		D929DA5D1E7D178B006A868D /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D929DA5C1E7D178B006A868D /* TabBarViewController.m */; };
+		D95B73DB1E6BA64B0057972A /* ShareCanvasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D95B73DA1E6BA64B0057972A /* ShareCanvasTableViewController.m */; };
+		D95B73DE1E6BA6940057972A /* ShareCanvasTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D95B73DD1E6BA6940057972A /* ShareCanvasTableViewCell.m */; };
+		D95B73E91E6C528B0057972A /* Share+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D95B73E61E6C528B0057972A /* Share+CoreDataClass.m */; };
+		D95B73EA1E6C528B0057972A /* Share+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D95B73E81E6C528B0057972A /* Share+CoreDataProperties.m */; };
 		D95C6B691D60527100FE999C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C6B681D60527100FE999C /* CoreText.framework */; };
 		D95C6B6B1D60527D00FE999C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C6B6A1D60527D00FE999C /* CoreGraphics.framework */; };
 		D95C6B6D1D6052C700FE999C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95C6B6C1D6052C700FE999C /* Foundation.framework */; };
@@ -78,6 +83,16 @@
 		D9127E8B1E2B32F500261165 /* SuggestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestTableViewCell.m; sourceTree = "<group>"; };
 		D927F6691C11C98200FB4675 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
 		D927F66A1C11C98200FB4675 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		D929DA5B1E7D178B006A868D /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		D929DA5C1E7D178B006A868D /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		D95B73D91E6BA64B0057972A /* ShareCanvasTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareCanvasTableViewController.h; sourceTree = "<group>"; };
+		D95B73DA1E6BA64B0057972A /* ShareCanvasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareCanvasTableViewController.m; sourceTree = "<group>"; };
+		D95B73DC1E6BA6940057972A /* ShareCanvasTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareCanvasTableViewCell.h; sourceTree = "<group>"; };
+		D95B73DD1E6BA6940057972A /* ShareCanvasTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareCanvasTableViewCell.m; sourceTree = "<group>"; };
+		D95B73E51E6C528B0057972A /* Share+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Share+CoreDataClass.h"; sourceTree = "<group>"; };
+		D95B73E61E6C528B0057972A /* Share+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Share+CoreDataClass.m"; sourceTree = "<group>"; };
+		D95B73E71E6C528B0057972A /* Share+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Share+CoreDataProperties.h"; sourceTree = "<group>"; };
+		D95B73E81E6C528B0057972A /* Share+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Share+CoreDataProperties.m"; sourceTree = "<group>"; };
 		D95C6B681D60527100FE999C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		D95C6B6A1D60527D00FE999C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D95C6B6C1D6052C700FE999C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -274,6 +289,10 @@
 				D98F046C1C12BC7F00A1D1F7 /* ContentDetailViewController.m */,
 				D9127E871E2B2CA800261165 /* SuggestContentTableViewController.h */,
 				D9127E881E2B2CA800261165 /* SuggestContentTableViewController.m */,
+				D95B73D91E6BA64B0057972A /* ShareCanvasTableViewController.h */,
+				D95B73DA1E6BA64B0057972A /* ShareCanvasTableViewController.m */,
+				D929DA5B1E7D178B006A868D /* TabBarViewController.h */,
+				D929DA5C1E7D178B006A868D /* TabBarViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -296,6 +315,10 @@
 		D98624CB1C007F8B00B99477 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D95B73E51E6C528B0057972A /* Share+CoreDataClass.h */,
+				D95B73E61E6C528B0057972A /* Share+CoreDataClass.m */,
+				D95B73E71E6C528B0057972A /* Share+CoreDataProperties.h */,
+				D95B73E81E6C528B0057972A /* Share+CoreDataProperties.m */,
 				D9127E811E2B2B9F00261165 /* Suggest+CoreDataClass.h */,
 				D9127E821E2B2B9F00261165 /* Suggest+CoreDataClass.m */,
 				D9127E831E2B2B9F00261165 /* Suggest+CoreDataProperties.h */,
@@ -324,6 +347,8 @@
 				D98624EC1C0163D800B99477 /* ContentTableViewCell.m */,
 				D9127E8A1E2B32F500261165 /* SuggestTableViewCell.h */,
 				D9127E8B1E2B32F500261165 /* SuggestTableViewCell.m */,
+				D95B73DC1E6BA6940057972A /* ShareCanvasTableViewCell.h */,
+				D95B73DD1E6BA6940057972A /* ShareCanvasTableViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -465,9 +490,12 @@
 			files = (
 				D98624F61C0AD98900B99477 /* CanvasNavigationViewController.m in Sources */,
 				D98624E61C008A9B00B99477 /* User.m in Sources */,
+				D95B73DB1E6BA64B0057972A /* ShareCanvasTableViewController.m in Sources */,
+				D95B73EA1E6C528B0057972A /* Share+CoreDataProperties.m in Sources */,
 				D98624F91C0AD9A000B99477 /* ContentNavigationViewController.m in Sources */,
 				D98624E51C008A9B00B99477 /* User+CoreDataProperties.m in Sources */,
 				D98624C11C007F4600B99477 /* NSManagedObject+KIAdditions.m in Sources */,
+				D929DA5D1E7D178B006A868D /* TabBarViewController.m in Sources */,
 				D9A5311D1CC26599000C73AC /* Canvas+CoreDataProperties.m in Sources */,
 				D9127E8C1E2B32F500261165 /* SuggestTableViewCell.m in Sources */,
 				D98F046D1C12BC7F00A1D1F7 /* ContentDetailViewController.m in Sources */,
@@ -480,6 +508,7 @@
 				D98624FC1C0B2A5100B99477 /* UserTableViewController.m in Sources */,
 				D927F66B1C11C98200FB4675 /* SignInViewController.m in Sources */,
 				D98624B91C002F2500B99477 /* EditTableViewController.m in Sources */,
+				D95B73E91E6C528B0057972A /* Share+CoreDataClass.m in Sources */,
 				D98624DE1C008A1C00B99477 /* Canvas.m in Sources */,
 				D98624891C000FBD00B99477 /* ViewController.m in Sources */,
 				D98624861C000FBD00B99477 /* AppDelegate.m in Sources */,
@@ -489,6 +518,7 @@
 				D9127E891E2B2CA800261165 /* SuggestContentTableViewController.m in Sources */,
 				D9127E861E2B2BA200261165 /* Suggest+CoreDataProperties.m in Sources */,
 				D98624ED1C0163D800B99477 /* ContentTableViewCell.m in Sources */,
+				D95B73DE1E6BA6940057972A /* ShareCanvasTableViewCell.m in Sources */,
 				D98624E01C008A1C00B99477 /* Content.m in Sources */,
 				D98624C71C007F5000B99477 /* KICoreDataManager.m in Sources */,
 			);
