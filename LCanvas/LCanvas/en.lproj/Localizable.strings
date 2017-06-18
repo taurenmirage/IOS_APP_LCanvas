@@ -60,7 +60,7 @@
 
 "accept"="Accept";
 
-"deny"="Deny";
+"deny"="Delete";
 
 "new"="New";
 
@@ -93,6 +93,8 @@
 "msg010"="Output the PDF and send by mail？";
 
 "msg011"="Did not set any mail accout yet.";
+
+"msg012"="Replace the content？";
 
 "keyPartnersB"="Key Partners";
 

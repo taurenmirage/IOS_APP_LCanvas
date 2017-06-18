@@ -155,9 +155,14 @@
     
     tempCotentInfo = self.content.text;
     
-    
-    
-    [postBody appendData:[[NSString stringWithFormat:@"content_type=%@&canvas_id=%@&content=%@&create_user=%@&suggest_id=%@",_content_type,_canvas_id,tempCotentInfo,_user_id,_suggest_id] dataUsingEncoding:NSUTF8StringEncoding]];
+    if (_isOwner)
+    {
+        [postBody appendData:[[NSString stringWithFormat:@"content_type=%@&canvas_id=%@&content=%@&create_user=%@&suggest_id=%@&active_flag=%@",_content_type,_canvas_id,tempCotentInfo,_user_id,_suggest_id,@"1"] dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    else
+    {
+        [postBody appendData:[[NSString stringWithFormat:@"content_type=%@&canvas_id=%@&content=%@&create_user=%@&suggest_id=%@",_content_type,_canvas_id,tempCotentInfo,_user_id,_suggest_id] dataUsingEncoding:NSUTF8StringEncoding]];
+    }
     
     [request setHTTPBody:postBody];
     
@@ -578,8 +583,30 @@
 {
     NSLog(@"values:::%@",values);
     NSLog(@"suggest:::%@",suggest_id);
-    self.content.text = values;
-    self.suggest_id = suggest_id;
+    
+    if (![self.content.text isEqualToString:@""])
+    {
+        UIAlertController *reportController = [UIAlertController alertControllerWithTitle:@"" message:NSLocalizedString ( @"msg012" , nil ) preferredStyle:UIAlertControllerStyleAlert];
+        
+        
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:NSLocalizedString ( @"canncel" , nil ) style:UIAlertActionStyleCancel handler:nil];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString ( @"ok" , nil ) style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            self.content.text = values;
+            self.suggest_id = suggest_id;
+            
+        }];
+        
+        [reportController addAction:cancelAction];
+        [reportController addAction:okAction];
+        
+        [self presentViewController:reportController animated:YES completion:nil];
+    }
+    else
+    {
+        self.content.text = values;
+        self.suggest_id = suggest_id;
+    }
 }
 
 #pragma mark - Navigation

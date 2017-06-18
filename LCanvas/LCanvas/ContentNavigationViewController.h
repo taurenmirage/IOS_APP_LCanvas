@@ -11,5 +11,6 @@
 @interface ContentNavigationViewController : UINavigationController
 
 @property (nonatomic, strong) NSString *contentType;
+@property (nonatomic) BOOL isOwner;
 
 @end

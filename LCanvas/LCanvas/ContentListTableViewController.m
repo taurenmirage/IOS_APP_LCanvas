@@ -172,7 +172,7 @@
         {
             NSString *predicates;
             
-            predicates = @"content_type == ";
+            predicates = @"active_flag == 0 and content_type == ";
             
             predicates = [predicates stringByAppendingString:self.contentType];
             
@@ -289,7 +289,7 @@
         
         NSLog(@"deny");
         
-        [self UpdateCotentToServer:@"2"];
+        [self UpdateCotentToServer:@"3"];
         
         
         cell.activeFlag = @"2";
@@ -297,7 +297,7 @@
         [cell.content setTextColor:[UIColor grayColor]];
         
         [self fetchDataFromCoreData];
-        //[self.tableView reloadData];
+        [self.tableView reloadData];
         
         
         // 1. 更新数据
@@ -351,7 +351,7 @@
         [cell.content setTextColor:[UIColor blackColor]];
         
         [self fetchDataFromCoreData];
-        //[self.tableView reloadData];
+        [self.tableView reloadData];
         
     }];
     
@@ -512,8 +512,15 @@
 }
 
 - (void)DoSomethingAfterAddContent{
-    [self.viewControl setSelectedSegmentIndex:1];
-    self.viewFlag =@"0";
+    if (_isOwner)
+    {
+        [self.viewControl setSelectedSegmentIndex:0];
+        self.viewFlag =@"1";
+    }
+    else{
+        [self.viewControl setSelectedSegmentIndex:1];
+        self.viewFlag =@"0";
+    }
     [self fetchCanvasDataFromCoreData];
     [self fetchDataFromCoreData];
     [self.tableView reloadData];
@@ -547,7 +554,7 @@
         
         rvc.content_type = self.contentType;
         
-        
+        rvc.isOwner = self.isOwner;
         
         rvc.delegate = self;
         

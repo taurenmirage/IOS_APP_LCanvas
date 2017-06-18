@@ -37,6 +37,7 @@
 @property (nonatomic, strong) NSString *user_id;
 
 @property (nonatomic, strong) NSString *canvas_type;
+@property (nonatomic) BOOL isOwner;
 
 @property (nonatomic, assign) id <addContentDelegate> delegate;
 
